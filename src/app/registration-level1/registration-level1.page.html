@@ -1,0 +1,34 @@
+<ion-content padding>
+
+    <ion-buttons>
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      
+  <ion-list lines="none" margin>
+      <br>
+      <ion-label text-center color="medium"><h1><b>Lorem Ipsum</b></h1></ion-label>
+      <br><br><br>
+      <ion-item margin-bottom> 
+        <ion-icon name="person" mode="md" slot="start" color="medium"></ion-icon>
+        <ion-input placeholder="Email"></ion-input>
+      </ion-item>
+      <br><br>
+      <ion-item>
+        <ion-icon name="lock" mode="ios" slot="start" color="medium"></ion-icon>
+        <ion-input placeholder="Password"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+          <ion-icon name="lock" mode="ios" slot="start" color="medium"></ion-icon>
+          <ion-input placeholder="Confirm password"></ion-input>
+        </ion-item>
+  
+      <p>Lorem Ipsum</p>
+      <br>
+      <ion-button (click)="login()" tappable slot="end" class="ion-text-capitalize">Lorem</ion-button>
+      
+    </ion-list>  
+
+    
+
+</ion-content>
