@@ -1,9 +1,48 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>registrationLevel2</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content padding>
 
-<ion-content>
+  <ion-buttons>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    
+<ion-list lines="none" class="ion-margin-horizontal">
+    <ion-label text-center color="medium"><h1><b>Lorem Ipsum</b></h1></ion-label>
+    <ion-text text-center color="medium">It has survived not only five centuries, but also the leap into electronic typesetting.</ion-text>
+    <br><br>
+    <ion-thumbnail class="">
+      <img src="./../../assets/imgs/person.png">
+    </ion-thumbnail>
+    <br>
+    <ion-item> 
+      <ion-icon name="person" mode="md" slot="start" color="medium"></ion-icon>
+      <ion-input placeholder="Email"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-icon name="lock" mode="ios" slot="start" color="medium"></ion-icon>
+      <ion-input placeholder="kids"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label>Grade</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label>Group</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="Group1">Group1</ion-select-option>
+        <ion-select-option value="Group2">Group2</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <br>
+    <ion-button (click)="register()" tappable slot="end" class="ion-text-capitalize">Lorem</ion-button>
+    
+  </ion-list>  
+
+  
 
 </ion-content>
