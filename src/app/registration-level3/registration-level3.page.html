@@ -6,19 +6,26 @@
     
 <ion-list lines="none" class="ion-margin-horizontal">
     <ion-label text-center color="medium"><h1><b>Lorem Ipsum</b></h1></ion-label>
-    <ion-text text-center color="medium">It has survived not only five centuries, but also the leap into electronic typesetting.</ion-text>
-    <br><br>
-    <ion-thumbnail class="">
+    <br>
+    <ion-thumbnail class="custom-thumbnail">
       <img src="./../../assets/imgs/person.png">
+    </ion-thumbnail>
+    <ion-thumbnail class="custom-thumbnail-bot">
+      <img src="./../../assets/imgs/camera-bot.png">
     </ion-thumbnail>
     <br>
     <ion-item> 
-      <ion-icon name="person" mode="md" slot="start" color="medium"></ion-icon>
       <ion-input placeholder="Email"></ion-input>
     </ion-item>
-    <br>
+
+    <ion-item style="--background: transparent;">
+      <ion-thumbnail slot="start">
+        <ion-img src="./../../assets/imgs/gray-camera.png"></ion-img>
+      </ion-thumbnail>
+      <ion-label color="medium"><h4><b>+Lorem Ipsum</b></h4></ion-label>
+    </ion-item>
+
     <ion-item>
-      <ion-icon name="lock" mode="ios" slot="start" color="medium"></ion-icon>
       <ion-input placeholder="kids"></ion-input>
     </ion-item>
     <br>
@@ -27,6 +34,14 @@
       <ion-select placeholder="Select One">
         <ion-select-option value="1">1</ion-select-option>
         <ion-select-option value="2">2</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label>Group</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="Group1">Group1</ion-select-option>
+        <ion-select-option value="Group2">Group2</ion-select-option>
       </ion-select>
     </ion-item>
     <br>

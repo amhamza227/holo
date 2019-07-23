@@ -29,13 +29,14 @@ export class RegistrationLevel2Page implements OnInit {
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
+            this.router.navigateByUrl('registration-level4'); 
             console.log('Confirm Cancel: blah');
           }
         }, {
           text: 'Okay',
           handler: () => {
+            this.router.navigateByUrl('registration-level3'); 
             console.log('Confirm Okay');
-            this.router.navigateByUrl('registration-level3');
           }
         }
       ]
