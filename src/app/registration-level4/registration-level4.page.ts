@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationLevel4Page implements OnInit {
 
+  lat: number = 51.678418;
+  lng: number = 7.809007;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setAddress(addrObj) {
+     console.log(addrObj)
   }
 
 }

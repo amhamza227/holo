@@ -6,6 +6,18 @@
     
 <ion-list lines="none" class="ion-margin-horizontal">
     <ion-label text-center color="medium"><h1><b>Lorem Ipsum</b></h1></ion-label>
-    
+</ion-list>
+
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
+
+<ion-item class="custom-item">
+
+  <input class="google-place-input text-input text-input-ios" id="searchTextField" #search type="text"
+    google-place (onSelect)="setAddress($event)"
+    placeholder="Your Building Address*">
+
+</ion-item>
 
 </ion-content>
