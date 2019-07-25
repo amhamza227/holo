@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,13 +11,17 @@ export class RegistrationLevel4Page implements OnInit {
   lat: number = 51.678418;
   lng: number = 7.809007;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }
 
   setAddress(addrObj) {
      console.log(addrObj)
+  }
+
+  register(){
+    this.router.navigateByUrl('routine');
   }
 
 }

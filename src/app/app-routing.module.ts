@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'registration-level1', loadChildren: './registration-level1/registration-level1.module#RegistrationLevel1PageModule' },
   { path: 'registration-level2', loadChildren: './registration-level2/registration-level2.module#RegistrationLevel2PageModule' },
   { path: 'registration-level3', loadChildren: './registration-level3/registration-level3.module#RegistrationLevel3PageModule' },
-  { path: 'registration-level4', loadChildren: './registration-level4/registration-level4.module#RegistrationLevel4PageModule' }
+  { path: 'registration-level4', loadChildren: './registration-level4/registration-level4.module#RegistrationLevel4PageModule' },
+  { path: 'routine', loadChildren: './routine/routine.module#RoutinePageModule' }
 ];
 
 @NgModule({
