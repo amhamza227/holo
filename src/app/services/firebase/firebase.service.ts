@@ -11,7 +11,7 @@ export class FirebaseService {
   constructor(private db: AngularFirestore) { }
 
   createUser(value: any) {
-    return new Promise((resolve, reject) => {
+    return new Promise<any>((resolve, reject) => {
       firebase.auth().createUserWithEmailAndPassword(value.email, value.password).then((data: any) => {
         this.db.collection(`users`).doc(data.user.uid).set({
           email: value.email
