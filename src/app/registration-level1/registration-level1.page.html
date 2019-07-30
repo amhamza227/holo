@@ -1,34 +1,59 @@
 <ion-content padding>
 
-    <ion-buttons>
-        <ion-back-button defaultHref="/"></ion-back-button>
-      </ion-buttons>
-      
-  <ion-list lines="none" margin>
+  <ion-buttons>
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+
+  <form [formGroup]="registerForm">
+
+    <ion-list lines="none" margin>
       <br>
-      <ion-label text-center color="medium"><h1><b>Lorem Ipsum</b></h1></ion-label>
+      <ion-label text-center color="medium">
+        <h1><b>Lorem Ipsum</b></h1>
+      </ion-label>
       <br><br><br>
-      <ion-item margin-bottom> 
+      <ion-item margin-bottom>
         <ion-icon name="person" mode="md" slot="start" color="medium"></ion-icon>
-        <ion-input placeholder="Email"></ion-input>
+        <ion-input formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+          placeholder="Email"></ion-input>
       </ion-item>
+
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <ion-text color="danger" *ngIf="f.email.errors.required">Email is required</ion-text>
+        <ion-text color="danger" *ngIf="f.email.errors.email">Email must be a valid email address</ion-text>
+      </div>
+
       <br><br>
       <ion-item>
         <ion-icon name="lock" mode="ios" slot="start" color="medium"></ion-icon>
-        <ion-input placeholder="Password"></ion-input>
+        <ion-input formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+          placeholder="Password"></ion-input>
       </ion-item>
+
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <ion-text color="danger" *ngIf="f.password.errors.required">Password is required</ion-text>
+        <ion-text color="danger" *ngIf="f.password.errors.minlength">Password must be at least 6 characters</ion-text>
+      </div>
+
       <br>
       <ion-item>
-          <ion-icon name="lock" mode="ios" slot="start" color="medium"></ion-icon>
-          <ion-input placeholder="Confirm password"></ion-input>
-        </ion-item>
-  
+        <ion-icon name="lock" mode="ios" slot="start" color="medium"></ion-icon>
+        <ion-input formControlName="confirmPassword" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
+          placeholder="Confirm password"></ion-input>
+      </ion-item>
+
+      <div *ngIf="submitted && f.confirmPassword.errors">
+        <ion-text color="danger" *ngIf="f.confirmPassword.errors.required">Confirm Password is required</ion-text>
+        <ion-text color="danger" *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</ion-text>
+      </div>
+
       <p>Lorem Ipsum</p>
       <br>
-      <ion-button (click)="register()" tappable slot="end" class="ion-text-capitalize">Lorem</ion-button>
-      
-    </ion-list>  
+      <ion-button (click)="register()" [disabled]="registerForm.pristine || registerForm.invalid" tappable slot="end"
+        class="ion-text-capitalize">Lorem</ion-button>
 
-    
+    </ion-list>
+
+  </form>
 
 </ion-content>

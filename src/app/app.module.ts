@@ -1,3 +1,5 @@
+import { environment } from './../environments/environment.prod';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivesGooglePlacesDirective } from './../directives/directives-google-places/directives-google-places';
 
 import { NgModule } from '@angular/core';
@@ -12,6 +14,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AgmCoreModule } from '@agm/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [AppComponent, DirectivesGooglePlacesDirective],
@@ -22,7 +26,9 @@ import { AgmCoreModule } from '@agm/core';
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB1Et1ylqbi6j8VpP6MQxmWp3PPZ_LAGkY'
-    })
+    }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
   providers: [
     StatusBar,
