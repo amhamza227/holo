@@ -4,6 +4,8 @@
     <ion-back-button defaultHref="/"></ion-back-button>
   </ion-buttons>
 
+  <form [formGroup]="registerForm">
+
   <ion-list lines="none" class="ion-margin-horizontal">
     <ion-label text-center color="medium">
       <h1><b>Lorem Ipsum</b></h1>
@@ -12,7 +14,7 @@
   </ion-list>
 
   <ion-item class="custom-item">
-    <input style="width: 100%;border: none;" class="google-place-input text-input text-input-ios" id="searchTextField"
+    <input formControlName="location" style="width: 100%;border: none;" class="google-place-input text-input text-input-ios" id="searchTextField"
       #search type="text" google-place (onSelect)="setAddress($event)" placeholder="Your Building Address*">
   </ion-item>
   <br>
@@ -23,12 +25,13 @@
   <br>
 
   <ion-item class="custom-item">
-    <ion-label>Select</ion-label>
-    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Neighbour</ion-label>
+    <ion-checkbox formControlName="neighbour" slot="start"></ion-checkbox>
   </ion-item>
   <br>
   
   <ion-button (click)="register()" tappable class="ion-text-capitalize">Lorem</ion-button>
 
+</form>
 
 </ion-content>

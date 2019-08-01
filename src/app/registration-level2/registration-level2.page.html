@@ -1,48 +1,74 @@
 <ion-content padding>
 
   <ion-buttons>
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    
-<ion-list lines="none" class="ion-margin-horizontal">
-    <ion-label text-center color="medium"><h1><b>Lorem Ipsum</b></h1></ion-label>
-    <ion-text text-center color="medium">It has survived not only five centuries, but also the leap into electronic typesetting.</ion-text>
-    <br><br>
-    <ion-thumbnail class="">
-      <img src="./../../assets/imgs/person.png">
-    </ion-thumbnail>
-    <br>
-    <ion-item> 
-      <ion-icon name="person" mode="md" slot="start" color="medium"></ion-icon>
-      <ion-input placeholder="Email"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-icon name="lock" mode="ios" slot="start" color="medium"></ion-icon>
-      <ion-input placeholder="kids"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-label>Grade</ion-label>
-      <ion-select placeholder="Select One">
-        <ion-select-option value="1">1</ion-select-option>
-        <ion-select-option value="2">2</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-label>Group</ion-label>
-      <ion-select placeholder="Select One">
-        <ion-select-option value="Group1">Group1</ion-select-option>
-        <ion-select-option value="Group2">Group2</ion-select-option>
-      </ion-select>
-    </ion-item>
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
 
-    <br>
-    <ion-button (click)="register()" tappable slot="end" class="ion-text-capitalize">Lorem</ion-button>
-    
-  </ion-list>  
+  <form [formGroup]="registerForm">
 
-  
+    <ion-list lines="none" class="ion-margin-horizontal">
+      <ion-label text-center color="medium">
+        <h1><b>Lorem Ipsum</b></h1>
+      </ion-label>
+      <ion-text text-center color="medium">It has survived not only five centuries, but also the leap into electronic
+        typesetting.</ion-text>
+      <br><br>
+      <ion-thumbnail class="">
+        <img src="./../../assets/imgs/person.png">
+      </ion-thumbnail>
+      <br>
+      <ion-item>
+        <!-- <ion-icon name="person" mode="md" slot="start" color="medium"></ion-icon> -->
+        <ion-input formControlName="email" placeholder="Email"></ion-input>
+      </ion-item>
+
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <ion-text color="danger" *ngIf="f.email.errors.required">Email is required</ion-text>
+        <ion-text color="danger" *ngIf="f.email.errors.email">Email must be a valid email address</ion-text>
+      </div>
+
+      <br>
+      <ion-item>
+        <!-- <ion-icon name="lock" mode="ios" slot="start" color="medium"></ion-icon> -->
+        <ion-input formControlName="kids" placeholder="kids"></ion-input>
+      </ion-item>
+
+      <div *ngIf="submitted && f.kids.errors" class="invalid-feedback">
+        <ion-text color="danger" *ngIf="f.kids.errors.required">Kids is required</ion-text>
+      </div>
+
+      <br>
+      <ion-item>
+        <ion-label>Grade</ion-label>
+        <ion-select formControlName="grade" placeholder="Select Grade">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div *ngIf="submitted && f.grade.errors" class="invalid-feedback">
+        <ion-text color="danger" *ngIf="f.grade.errors.required">Grade is required</ion-text>
+      </div>
+
+      <br>
+      <ion-item>
+        <ion-label>Group</ion-label>
+        <ion-select formControlName="group" placeholder="Select Group">
+          <ion-select-option value="Group1">Group1</ion-select-option>
+          <ion-select-option value="Group2">Group2</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div *ngIf="submitted && f.group.errors" class="invalid-feedback">
+        <ion-text color="danger" *ngIf="f.group.errors.required">Group is required</ion-text>
+      </div>
+
+      <br>
+      <ion-button (click)="register()" [disabled]="registerForm.pristine || registerForm.invalid" tappable slot="end"
+        class="ion-text-capitalize">Lorem</ion-button>
+
+    </ion-list>
+
+  </form>
 
 </ion-content>

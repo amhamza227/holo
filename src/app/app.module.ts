@@ -1,3 +1,4 @@
+import { GlobalsProvider } from './../providers/globals/globals';
 import { environment } from './../environments/environment.prod';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivesGooglePlacesDirective } from './../directives/directives-google-places/directives-google-places';
@@ -33,7 +34,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    GlobalsProvider
   ],
   bootstrap: [AppComponent]
 })
